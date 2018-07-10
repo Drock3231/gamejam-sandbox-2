@@ -30,7 +30,6 @@ public class TileSet {
 			tmp = tiles.get(i);
 			tileSet.add(new Tile(texture, tmp.getInt("x"), tmp.getInt("y"), dimx, dimy));
 		}
-
 	}
 	
 

@@ -22,7 +22,7 @@ public class WorldController extends Controller{
 		this.world = world;
 		this.world.map = new Map(new FileHandle("world1.json"));
 
-		Player player = new Player(new Vector2(64,64));
+		Player player = new Player(new Vector2(10,10));
 
 		setPlayerController(new PlayerController(player));
 		setEntityController(new EntityController());

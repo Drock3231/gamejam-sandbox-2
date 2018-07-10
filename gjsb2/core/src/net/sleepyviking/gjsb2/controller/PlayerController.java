@@ -64,6 +64,9 @@ public class PlayerController extends EntityController implements InputProcessor
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+
+		System.out.println(screenX + "   " + screenY);
+		System.out.println(player.getPos());
 		return false;
 	}
 

@@ -1,5 +1,7 @@
 {
   "name":"World I",
+  "tilesizex":1,
+  "tilesizey":1,
   "sizex":64,
   "sizey":64,
   "tileset":"tileset1.json",

@@ -7,8 +7,9 @@ public class Player extends Mob{
 
 	public Player(Vector2 pos){
 		super(pos);
-		this.moveSpeed = 25.0f;
+		this.moveSpeed = 64.0f;
 		this.moveDir = new Vector2(0, 0);
+		this.size = new Vector2(1, 1);
 		this.name = "Player";
 	}
 
