@@ -12,11 +12,13 @@ import net.sleepyviking.gjsb2.model.Entity;
 import net.sleepyviking.gjsb2.model.Player;
 import net.sleepyviking.gjsb2.model.World;
 import net.sleepyviking.gjsb2.model.map.Tile;
+import net.sleepyviking.gjsb2.screen.Hud;
 
 public class WorldRenderer {
 
     private SpriteBatch spriteBatch;
     private OrthographicCamera camera;
+    private Hud hud;
     
     
     private Vector2 viewPort;
@@ -34,6 +36,8 @@ public class WorldRenderer {
         camera = world.getCamera();
         viewPort = new Vector2(world.getViewport());
         camera.setToOrtho(false, viewPort.x, viewPort.y);
+
+        hud = new Hud(spriteBatch);
     }
 
     //does the rendering
@@ -48,8 +52,11 @@ public class WorldRenderer {
             /*renderWhomever functions called here*/
             renderWorld();
             renderEntities();
-            
-        spriteBatch.end();}
+
+        spriteBatch.end();
+
+            hud.stage.act();
+            hud.stage.draw();}
 
     }
 
@@ -82,6 +89,10 @@ public class WorldRenderer {
     
     public void dispose(){
         spriteBatch.dispose();
+    }
+
+    public Hud getHud(){
+        return hud;
     }
 
 

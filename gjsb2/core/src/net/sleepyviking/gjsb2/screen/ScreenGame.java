@@ -2,6 +2,7 @@ package net.sleepyviking.gjsb2.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 
 import net.sleepyviking.gjsb2.controller.WorldController;
@@ -20,8 +21,12 @@ public class ScreenGame extends ScreenBase{
     public ScreenGame(Game game){
 
         world = new World();
-        worldController = new WorldController(world);
         worldRenderer = new WorldRenderer(world);
+        worldController = new WorldController(world);
+
+        InputMultiplexer multiplexer = new InputMultiplexer(worldController.getPlayerController(),worldRenderer.getHud().stage);
+        Gdx.input.setInputProcessor(multiplexer);
+
     }
 
     //rendering world variables

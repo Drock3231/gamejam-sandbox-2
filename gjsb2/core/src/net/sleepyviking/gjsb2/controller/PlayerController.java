@@ -15,7 +15,6 @@ public class PlayerController extends EntityController implements InputProcessor
 
 	PlayerController(Player player){
 		this.setPlayer(player);
-		Gdx.input.setInputProcessor(this);
 	}
 
 	@Override
